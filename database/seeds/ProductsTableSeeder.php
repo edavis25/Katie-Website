@@ -21,6 +21,13 @@ class ProductsTableSeeder extends Seeder
                 'price' => $faker->randomNumber(2),
                 'category_id' => 1
             ],
+            [
+                'name' => 'Votive Candle',
+                'description' => $faker->text(100),
+                'quantity' => 5,
+                'price' => $faker->randomNumber(2),
+                'category_id' => 1
+            ]
         ]);
     }
 }
