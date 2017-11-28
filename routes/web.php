@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    $category = App\Category::find(1);
-    dd($category->products);
-    return view('welcome');
+    //$category = App\Category::find(1);
+    //dd($category->products);
+    //return view('welcome');
+    return view('home');
 });
 
 Route::resource('products', 'ProductsController');
