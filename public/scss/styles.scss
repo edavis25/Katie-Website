@@ -1,5 +1,15 @@
 @import "_variables";
+@import "_mixins";
+@import "_base";
+@import "_navigation";
+@import "_components";
 
-body {
-	
+#tagline {
+    text-align: center;    
+    @media (min-width: 768px) {
+        margin-top: 40px;
+    }
+    @media (max-width: 767px) {
+        display: none;
+    }
 }

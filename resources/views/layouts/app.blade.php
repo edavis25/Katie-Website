@@ -14,17 +14,54 @@
 
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
+  <div class="" id="page-wrapper">
 
-  <div class="container" id="#page-wrapper">
-    <header class="mx-auto">
-      <h1>Test</h1>
+    <header class="mx-auto fixed-top">
+
+      <h1 id="tagline" class="">Katie's Crafts</h1>
+
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="navbar-brand">TEST</div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-sm-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PRODUCTS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">RECIPES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">HOLIDAY</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">BLOG</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
     </header>
 
-    @yield('content')
+    <div class="container" id="page-content">
+      @yield('content')
+    </div>
 
   </div>
 
@@ -38,6 +75,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <!-- Bootstrap 4 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Custom Scripts -->
+    <script src="{{ asset('js/scripts.js') }}"></script>
   @show
 </body>
 </html>

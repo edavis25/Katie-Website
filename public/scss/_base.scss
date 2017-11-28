@@ -1,0 +1,12 @@
+body {
+    background-image: url('../img/floral.png');
+}
+
+#page-content {
+    @media (max-width: 768px) {
+        margin-top: 40px;
+    }
+    @media (min-width: 768px) {
+        margin-top: 170px;
+    }
+}

@@ -1,0 +1,70 @@
+// Header/navbar
+
+header {
+    background-color: transparent;
+    @include transition(all 0.25s ease);
+
+    @media (min-width: 768px) {
+        height: 170px;
+    }
+
+    h1 {
+        @include transition(all 0.25s ease);
+        margin-bottom: 25px;
+        font-family: $cursive-font;
+        font-weight: 600;
+    }
+
+    &.shrink {
+        background-color: rgba(255,255,255,0.9);
+
+        @media (min-width: 768px) {
+            height: 140px;
+            margin-top: -30px;
+
+            h1 {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.navbar-brand {
+    @media (min-width: 768px) {
+        display: none;
+    }    
+}
+
+.navbar {
+
+    li {
+        padding: 5px 15px;
+        margin: auto 2px;
+
+        &:nth-child(1) {
+            background-color: $theme-pink;
+        }
+        &:nth-child(2) {
+            background-color: $theme-purple;
+        }
+        &:nth-child(3) {
+            background-color: $theme-orange;
+        }
+        &:nth-child(4) {
+            background-color: $theme-green;
+        }
+        &:nth-child(5) {
+            background-color: $theme-blue;
+        }
+        &:nth-child(6) {
+            background-color: $theme-pink;
+        }
+
+        a {
+            padding: 0;
+            color: #fff !important;
+            font-weight: 600;
+            margin-top: -1px;
+        }
+    }
+}

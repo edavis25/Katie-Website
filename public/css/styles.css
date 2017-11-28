@@ -1,0 +1,89 @@
+body {
+  background-image: url("../img/floral.png"); }
+
+@media (max-width: 768px) {
+  #page-content {
+    margin-top: 40px; } }
+
+@media (min-width: 768px) {
+  #page-content {
+    margin-top: 170px; } }
+
+header {
+  background-color: transparent;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
+  @media (min-width: 768px) {
+    header {
+      height: 170px; } }
+  header h1 {
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    margin-bottom: 25px;
+    font-family: "Princess Sofia", cursive, Helvetica, serif;
+    font-weight: 600; }
+  header.shrink {
+    background-color: rgba(255, 255, 255, 0.9); }
+    @media (min-width: 768px) {
+      header.shrink {
+        height: 140px;
+        margin-top: -30px; }
+        header.shrink h1 {
+          margin-bottom: 0px; } }
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    display: none; } }
+
+.navbar li {
+  padding: 5px 15px;
+  margin: auto 2px; }
+  .navbar li:nth-child(1) {
+    background-color: #E5609A; }
+  .navbar li:nth-child(2) {
+    background-color: #9F59C6; }
+  .navbar li:nth-child(3) {
+    background-color: #f79f79; }
+  .navbar li:nth-child(4) {
+    background-color: #A9E2AC; }
+  .navbar li:nth-child(5) {
+    background-color: #b7d3f2; }
+  .navbar li:nth-child(6) {
+    background-color: #E5609A; }
+  .navbar li a {
+    padding: 0;
+    color: #fff !important;
+    font-weight: 600;
+    margin-top: -1px; }
+
+.feature-img {
+  margin-top: 30px;
+  filter: brightness(75%);
+  width: 100%;
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  transition: all 0.75s ease; }
+  .feature-img:hover {
+    filter: brightness(100%);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05); }
+
+#tagline {
+  text-align: center; }
+  @media (min-width: 768px) {
+    #tagline {
+      margin-top: 40px; } }
+  @media (max-width: 767px) {
+    #tagline {
+      display: none; } }
