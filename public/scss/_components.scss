@@ -1,3 +1,4 @@
+// Feature images on homepage
 .feature-img {
     margin-top: 30px;
     filter: brightness(75%);
@@ -8,4 +9,50 @@
         filter: brightness(100%);
         @include transform(scale(1.05));
     }
+}
+.feature-img-container {
+    position: relative;
+}
+.feature-img-caption {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+    color: #fff;
+
+    .h4 {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+// Page content
+.page-heading {
+  padding-top: 30px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.page-content {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  z-index: 5;
+  padding: 1.5em 3em;
+
+  @media (min-width: 768px) {
+    margin-top: -80px;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+}
+
+.filters {
+  border-right: 1px solid #000;
 }

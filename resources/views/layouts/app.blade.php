@@ -26,20 +26,21 @@
 
     <header class="mx-auto fixed-top">
 
-      <h1 id="tagline" class="">Katie's Crafts</h1>
+      <!--h1 id="tagline" class="">Katie's Crafts</h1-->
+      <img src="{{ asset('img/logo.png') }}" class="img-fluid" id="logo" />
 
       <nav class="navbar navbar-expand-md navbar-light">
-        <div class="navbar-brand">TEST</div>
+        <img src="{{ asset('img/logo.png') }}" class="navbar-brand img-fluid" />
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-sm-center" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ url('/') }}">HOME <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">PRODUCTS</a>
+                <a class="nav-link" href="{{ url('/products') }}">PRODUCTS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">RECIPES</a>
@@ -56,10 +57,9 @@
             </ul>
           </div>
         </nav>
-
     </header>
 
-    <div class="container" id="page-content">
+    <div class="" id="content-wrapper">
       @yield('content')
     </div>
 
