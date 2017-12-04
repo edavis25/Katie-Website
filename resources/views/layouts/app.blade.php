@@ -28,7 +28,7 @@
 
       <!--h1 id="tagline" class="">Katie's Crafts</h1-->
       <img src="{{ asset('img/logo.png') }}" class="img-fluid" id="logo" />
-
+      <div style="position: absolute; top: 40px; left: 90%;">Test</div>
       <nav class="navbar navbar-expand-md navbar-light">
         <img src="{{ asset('img/logo.png') }}" class="navbar-brand img-fluid" />
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">ABOUT</a>
               </li>
+              @if (Auth::check())
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ACCOUNT</a>
+                </li>
+                @if (Auth::user()->is_admin)
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">ADMIN</a>
+                  </li>
+                @endif
+              @endif
             </ul>
           </div>
         </nav>

@@ -7,7 +7,7 @@ body {
 
 @media (min-width: 768px) {
   #content-wrapper {
-    margin-top: 170px; } }
+    margin-top: 200px; } }
 
 header {
   background-color: transparent;
@@ -53,6 +53,9 @@ header {
 .navbar li {
   padding: 5px 15px;
   margin: auto 2px; }
+  @media (max-width: 767px) {
+    .navbar li {
+      border: 1px solid #fff; } }
   .navbar li:nth-child(1) {
     background-color: #E5609A; }
     .navbar li:nth-child(1):hover {
@@ -77,6 +80,20 @@ header {
     background-color: #E5609A; }
     .navbar li:nth-child(6):hover {
       background-color: #e976a8; }
+  .navbar li:nth-child(7) {
+    background-color: #9F59C6; }
+    .navbar li:nth-child(7):hover {
+      background-color: #aa6ccd; }
+    @media (min-width: 768px) {
+      .navbar li:nth-child(7) {
+        display: none; } }
+  .navbar li:nth-child(8) {
+    background-color: #f79f79; }
+    .navbar li:nth-child(8):hover {
+      background-color: #f8b091; }
+    @media (min-width: 768px) {
+      .navbar li:nth-child(8) {
+        display: none; } }
   .navbar li a {
     padding: 0;
     color: #fff !important;
@@ -126,7 +143,7 @@ header {
   padding: 1.5em 3em; }
   @media (min-width: 768px) {
     .page-content {
-      margin-top: -80px; } }
+      margin-top: -100px; } }
   .page-content h1 {
     font-weight: 600; }
 

@@ -18,7 +18,7 @@ header {
     img {
         display: block;
         @include transition(all 0.25s ease);
-        
+
         @media (min-width: 768px) {
             margin: 20px auto 15px auto;
             height: 80px !important;

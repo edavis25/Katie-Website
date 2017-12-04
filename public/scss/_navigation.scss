@@ -15,6 +15,10 @@
         padding: 5px 15px;
         margin: auto 2px;
 
+        @media (max-width: 767px) {
+          border: 1px solid #fff;
+        }
+
         &:nth-child(1) {
             background-color: $theme-pink;
             &:hover {
@@ -50,6 +54,26 @@
             &:hover {
               background-color: lighten($theme-pink, 5%);
             }
+        }
+        &:nth-child(7) {
+            background-color: $theme-purple;
+            &:hover {
+              background-color: lighten($theme-purple, 5%);
+            }
+            // Hide on non mobile
+            @media (min-width: 768px) {
+              display: none;
+            }
+        }
+        &:nth-child(8) {
+          background-color: $theme-orange;
+          &:hover {
+            background-color: lighten($theme-orange, 5%);
+          }
+          // Hide on non mobile
+          @media (min-width: 768px) {
+            display: none;
+          }
         }
 
         a {
