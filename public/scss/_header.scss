@@ -14,6 +14,25 @@ header {
     //    font-family: $cursive-font;
     //    font-weight: 600;
     //}
+    #large-screen-login {
+        position: absolute;
+        left: 65%;
+        top: 35%;
+        li {
+          list-style-type: none;
+          float: left;
+          margin-right: 15px;
+        }
+        a {
+          color: $theme-pink;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        @media (max-width: 767px) {
+          display: none;
+        }
+    }
 
     img {
         display: block;

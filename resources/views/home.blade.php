@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="container col-12">
                     <div class="feature-img-container">
-                        <img src="{{ asset('img/products-700x490.jpg') }}" alt="" class="feature-img img-fluid">
+                        <img src="{{ asset('img/products-700x490.jpg') }}" alt="" class="feature-img img-fluid mt-0">
                         <div class="feature-img-caption">
                             <span class="h4">PURCHASE HANDMADE PRODUCTS</span>
                         </div>
@@ -38,12 +38,12 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container col-12 col-md-5">
             <div class="row">
                 <div class="container col-12">
                     <div class="feature-img-container">
-                        <img src="{{ asset('img/blog-500x500.jpg') }}" alt="" class="feature-img img-fluid">
+                        <img src="{{ asset('img/blog-500x500.jpg') }}" alt="" class="feature-img img-fluid mt-0">
                         <div class="feature-img-caption">
                             <span class="h4">BLOG</span>
                         </div>

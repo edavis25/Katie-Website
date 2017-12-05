@@ -19,6 +19,11 @@ Route::get('/', function () {
 });
 
 Route::resource('products', 'ProductsController');
+Route::resource('category', 'CategoryController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', function() {
+  return view('admin');
+})->middleware('isAdmin');

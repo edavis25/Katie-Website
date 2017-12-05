@@ -3,20 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
 use App\Category;
 
-class ProductsController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $products = Product::all();
-        return view('products.index', compact('products'));
+        $categories = Category::all()->pluck('name')->toJson();
+        return $categories;
     }
 
     /**
@@ -24,23 +23,31 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        // Get categories for select box
-        $categories = Category::all()->pluck('name', 'name')->toArray();
-        return view('products.create', compact('categories'));
+        //
     }
 
     /**
      * Store a newly created resource in storage.
+     * Note: This is handled by an AJAX post and returns a simple message
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        dd(Category::all()->pluck('name')->toArray());
+        // Check if category already exists
+        $exists = Category::where('name', $request->name)->exists();
+        if ($exists) {
+          return 'This category already exists';
+        }
+        else {
+          $category = new Category($request->all());
+          $category->save();
+          return 'Category created successfully';
+        }
+        //return $request->name;
     }
 
     /**
@@ -49,9 +56,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Product $product)
+    public function show($id)
     {
-        return $product;
+        //
     }
 
     /**

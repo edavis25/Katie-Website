@@ -3,10 +3,16 @@ body {
 }
 
 #content-wrapper {
-    @media (max-width: 768px) {
-        margin-top: 40px;
+    @media (max-width: 767px) {
+        margin-top: 70px;
     }
     @media (min-width: 768px) {
         margin-top: 200px;
+    }
+}
+
+.login-container {
+    @media (max-width: 767px) {
+        //margin-top: 80px;
     }
 }

@@ -1,9 +1,9 @@
 body {
   background-image: url("../img/floral.png"); }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #content-wrapper {
-    margin-top: 40px; } }
+    margin-top: 70px; } }
 
 @media (min-width: 768px) {
   #content-wrapper {
@@ -19,6 +19,21 @@ header {
   @media (min-width: 768px) {
     header {
       height: 170px; } }
+  header #large-screen-login {
+    position: absolute;
+    left: 65%;
+    top: 35%; }
+    header #large-screen-login li {
+      list-style-type: none;
+      float: left;
+      margin-right: 15px; }
+    header #large-screen-login a {
+      color: #E5609A; }
+      header #large-screen-login a:hover {
+        text-decoration: none; }
+    @media (max-width: 767px) {
+      header #large-screen-login {
+        display: none; } }
   header img {
     display: block;
     -webkit-transition: all 0.25s ease;
@@ -130,10 +145,8 @@ header {
   .feature-img-caption p {
     font-size: 1.2rem; }
 
-.page-heading {
-  padding-top: 30px; }
-  .page-heading img {
-    width: 100%; }
+.page-heading img {
+  width: 100%; }
 
 .page-content {
   position: relative;
@@ -153,3 +166,33 @@ header {
 .breadcrumb {
   background: transparent;
   padding-left: 0; }
+
+.bg-pink {
+  background-color: #E5609A; }
+
+.bg-purple {
+  background-color: #9F59C6; }
+
+.bg-orange {
+  background-color: #f79f79; }
+
+.bg-green {
+  background-color: #A9E2AC; }
+
+.bg-blue {
+  background-color: #b7d3f2; }
+
+.text-pink {
+  color: #E5609A; }
+
+.text-purple {
+  color: #9F59C6; }
+
+.text-orange {
+  color: #f79f79; }
+
+.text-green {
+  color: #A9E2AC; }
+
+.text-blue {
+  color: #b7d3f2; }

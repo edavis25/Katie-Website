@@ -28,7 +28,27 @@
 
       <!--h1 id="tagline" class="">Katie's Crafts</h1-->
       <img src="{{ asset('img/logo.png') }}" class="img-fluid" id="logo" />
-      <div style="position: absolute; top: 40px; left: 90%;">Test</div>
+      @if (Auth::user() && Auth::user()->is_admin)
+      <div id="large-screen-login">
+        <ul>
+          <li>
+            <a href="{{ url('/admin') }}">
+              Admin
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                  Logout
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
+          </li>
+        </ul>
+      </div>
+      @endif
       <nav class="navbar navbar-expand-md navbar-light">
         <img src="{{ asset('img/logo.png') }}" class="navbar-brand img-fluid" />
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
