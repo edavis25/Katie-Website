@@ -27,7 +27,7 @@ class ProductsController extends Controller
     public function create(Request $request)
     {
         // Get categories for select box
-        $categories = Category::all()->pluck('name', 'name')->toArray();
+        $categories = Category::all()->pluck('name', 'name')->sort()->toArray();
         return view('products.create', compact('categories'));
     }
 
