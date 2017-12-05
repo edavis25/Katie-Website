@@ -4,26 +4,45 @@
 
 <div class="container bg-white p-3">
   <h1>Create New Product</h1>
-  {!! Form::open(['action' => 'ProductsController@store', 'method' => 'post']) !!}
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+  {!! Form::open(['action' => 'ProductsController@store', 'method' => 'post', 'enctype' => 'multipart/form-data']) !!}
     <div class="form-group">
-      {!! Form::label('name', 'Product Name'); !!}
+      {!! Form::label('name', 'Product Name'); !!}<span class="text-danger">*</span>
       {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter product name...']); !!}
     </div>
     <div class="form-group">
-      {!! Form::label('description', 'Description') !!}
+      {!! Form::label('description', 'Description') !!}<span class="text-danger">*</span>
       {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '4', 'placeholder' => 'Enter product description...']) !!}
     </div>
     <div class="form-group col-12 col-md-6 p-0">
-      {!! Form::label('category', 'Category', ['class' => 'd-block']) !!}
-      {!! Form::select('category', $categories, null, ['class' => 'form-control d-inline-block', 'id' => 'category-select', 'style' => 'max-width: 55%;']) !!}
+      {!! Form::label('category_id', 'Category') !!}<span class="text-danger">*</span><br>
+      {!! Form::select('category_id', $categories, null, ['class' => 'form-control d-inline-block', 'id' => 'category-select', 'style' => 'max-width: 55%;']) !!}
       <a class="" data-toggle="modal" data-target="#categoryModal" style="cursor: pointer">
         &nbsp;<span class="text-success"><span class="fa fa-plus"></span> New Category</span>
       </a>
       <!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoryModal">New Category</button-->
     </div>
     <div class="form-group col-12 col-md-6 p-0">
-      {!! Form::label('price', 'Price') !!}
+      {!! Form::label('price', 'Price') !!}<span class="text-danger">*</span>
       {!! Form::number('price', null, ['class' => 'form-control', 'placeholder' => 'xx.xx', 'min' => '0', 'step' => '0.01']) !!}
+    </div>
+    <div class="form-group">
+      {!! Form::label('featured-image', 'Featured Image', ['class' => 'mb-0']) !!}<span class="text-danger">*</span>
+      <small class="d-block">Upload only a single featured image</small>
+      {!! Form::file('featured-image') !!}
+    </div>
+    <div class="form-group">
+      {!! Form::label('images[]', 'Additional Images', ['class' => 'mb-0']) !!}
+      <small class="d-block">Upload 1 or more additional images (optional)</small>
+      {!! Form::file('images[]', ['multiple' => 'multiple']) !!}
     </div>
     {!! Form::submit('Create Product', ['class' => 'btn btn-success']) !!}
     {!! Form::reset('Reset Form', ['class' => 'btn btn-danger']) !!}
@@ -93,7 +112,7 @@
           select.html('');
           var categories = JSON.parse(data);
           for (var prop in categories) {
-            var opt = '<option value="' + categories[prop] + '">' + categories[prop] +'</option>';
+            var opt = '<option value="' + prop + '">' + categories[prop] +'</option>';
             select.append(opt);
           }
         });

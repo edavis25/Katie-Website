@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all()->pluck('name')->sort()->toJson();
+        $categories = Category::all()->pluck('name', 'id')->sort()->toJson();
         return $categories;
     }
 
