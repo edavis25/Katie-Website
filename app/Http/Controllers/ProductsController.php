@@ -18,7 +18,8 @@ class ProductsController extends Controller
     public function index(Request $request)
     {
         $products = Product::all();
-        return view('products.index', compact('products'));
+        $categories = Category::all()->pluck('name', 'id')->toArray();
+        return view('products.index', compact('products', 'categories'));
     }
 
     /**
@@ -47,7 +48,7 @@ class ProductsController extends Controller
           'description'  => 'required',
           'category'     => 'required',
           'price'        => 'required',
-          'featured-image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048'
+          'featured-image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
           'images.*'       => 'image|mimes:jpg,jpeg,png,gif,svg|max:2048'
         ]);
 

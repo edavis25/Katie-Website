@@ -23,10 +23,20 @@
       excepteur culpa aut possumus efflorescere.
     </p>
   </div>
-  <div class="row">
+  <!-- Search Filters -->
+  <div class="row mt-3">
     <div class="filters col-md-4 col-lg-3 pl-0">
-      amet sint noster sunt fore enim legam nisi aute tamen amet veniam velit amet
-      quis cillum duis legam esse multos
+      <h3>Filters</h3>
+      <div class="form-group">
+        <label>Keyword</label>
+        <input type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="d-block">Categories</label>
+        @foreach ($categories as $key=>$cat)
+          <span class="badge">{{ $cat }}</span>
+        @endforeach
+      </div>
     </div>
     <div class="col-md-8 col-lg-9">
       Aliqua deserunt efflorescere non o quorum eiusmod deserunt.

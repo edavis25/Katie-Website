@@ -162,6 +162,21 @@ header {
 
 .filters {
   border-right: 1px solid #000; }
+  .filters .badge {
+    color: #fff;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 10px; }
+    .filters .badge:nth-child(5n+1) {
+      background-color: #E5609A; }
+    .filters .badge:nth-child(5n + 2) {
+      background-color: rgba(159, 89, 198, 0.4); }
+    .filters .badge:nth-child(5n + 3) {
+      background-color: #f79f79; }
+    .filters .badge:nth-child(5n + 4) {
+      background-color: #A9E2AC; }
+    .filters .badge:nth-child(5n + 5) {
+      background-color: #b7d3f2; }
 
 .breadcrumb {
   background: transparent;
