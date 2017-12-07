@@ -27,29 +27,56 @@
   <div class="row mt-3">
     <div class="filters col-md-4 col-lg-3 pl-0">
       <h3>Filters</h3>
-      <div class="form-group">
-        <label>Keyword</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="form-group">
-        <label class="d-block">Categories</label>
-        @foreach ($categories as $key=>$cat)
-          <span class="badge">{{ $cat }}</span>
-        @endforeach
-      </div>
+      <hr>
+      {!! Form::open(['route' => 'products.index', 'method' => 'get', 'id' => 'search-form']) !!}
+        <div class="form-group">
+          {!! Form::label('search', 'Keyword') !!}
+          {!! Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Search by keywords...']) !!}
+        </div>
+        <div class="form-group">
+          {!! Form::label('categories', 'Categories', ['class' => 'd-block']) !!}
+          @foreach ($categories as $key=>$cat)
+            <span class="badge" data-catid="{{ $key }}">{{ $cat }}</span>
+          @endforeach
+        </div>
+        <div class="form-group">
+          {!! Form::submit('Search', ['class' => 'btn btn-info mt-4', 'style' => 'width: 100%']) !!}
+        </div>
+      {!! Form::close() !!}
     </div>
+
     <div class="col-md-8 col-lg-9">
-      Aliqua deserunt efflorescere non o quorum eiusmod deserunt.
-
-      Mentitum quo laborum ne quo elit est noster.
-
-      Ne singulis despicationes, mentitum ex aute.
-
-      Excepteur noster nostrud et labore officia ex aliquip.
-
-      Ea pariatur eu quamquam, ubi illum voluptatibus.
+      @foreach ($products as $product)
+        <a href="{{ route('products.show', $product) }}">{{ $product->name }}</a>
+        <br>
+      @endforeach
     </div>
   </div>
 </section>
 
+@endsection
+
+@section('scripts')
+  @parent
+
+  <script>
+    // Add and remove hidden form fields for selected categories
+    $('.badge').on('click', function() {
+      if ($(this).hasClass('active')) {
+        // If already active on click, deselect and remove hidden field from DOM
+        let catId = $(this).attr('data-catid');   // Category ID stored in data-catid attribute
+        // Remove hidden form field
+        $('input[type="hidden"][value="'+ catId +'"]').remove();
+        $(this).removeClass('active');
+      }
+      else {
+        // Select the category on click - add active class and create hidden form field
+        let catId = $(this).attr('data-catid');   // Category ID stored in data-catid attribute
+        // Add hidden form field
+        let hidden = '<input type="hidden" name="categories[]" value="' + catId + '" />';
+        $('#search-form').append(hidden);
+        $(this).addClass('active');
+      }
+    });
+  </script>
 @endsection

@@ -166,17 +166,34 @@ header {
     color: #fff;
     padding: 10px;
     font-size: 1em;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
     .filters .badge:nth-child(5n+1) {
-      background-color: #E5609A; }
+      background-color: rgba(229, 96, 154, 0.4); }
+      .filters .badge:nth-child(5n+1).active {
+        background-color: #E5609A; }
     .filters .badge:nth-child(5n + 2) {
       background-color: rgba(159, 89, 198, 0.4); }
+      .filters .badge:nth-child(5n + 2).active {
+        background-color: #9F59C6; }
     .filters .badge:nth-child(5n + 3) {
-      background-color: #f79f79; }
+      background-color: rgba(247, 159, 121, 0.4); }
+      .filters .badge:nth-child(5n + 3).active {
+        background-color: #f79f79; }
     .filters .badge:nth-child(5n + 4) {
-      background-color: #A9E2AC; }
+      background-color: rgba(169, 226, 172, 0.7); }
+      .filters .badge:nth-child(5n + 4).active {
+        background-color: #83d587; }
     .filters .badge:nth-child(5n + 5) {
-      background-color: #b7d3f2; }
+      background-color: rgba(183, 211, 242, 0.7); }
+      .filters .badge:nth-child(5n + 5).active {
+        background-color: #83b3e9; }
 
 .breadcrumb {
   background: transparent;
@@ -196,6 +213,9 @@ header {
 
 .bg-blue {
   background-color: #b7d3f2; }
+
+.bg-white {
+  background-color: #fff; }
 
 .text-pink {
   color: #E5609A; }

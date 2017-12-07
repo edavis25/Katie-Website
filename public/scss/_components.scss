@@ -59,22 +59,39 @@
     padding: 10px;
     font-size: 1em;
     margin-bottom: 10px;
+    cursor: pointer;
+    @include no-select(); // Disable user text select
 
     &:nth-child(5n+1) {
       //background-color: lighten($theme-pink, 60%);
-      background-color: $theme-pink;
+      background-color: transparentize($theme-pink, 0.6);
+      &.active {
+        background-color: $theme-pink;
+      }
     }
     &:nth-child(5n + 2) {
-      background-color: transparentize($theme-purple, .6);
+      background-color: transparentize($theme-purple, 0.6);
+      &.active {
+        background-color: $theme-purple;
+      }
     }
     &:nth-child(5n + 3) {
-      background-color: $theme-orange;
+      background-color: transparentize($theme-orange, 0.6);
+      &.active {
+        background-color: $theme-orange;
+      }
     }
     &:nth-child(5n + 4) {
-      background-color: $theme-green;
+      background-color: transparentize($theme-green, 0.3);
+      &.active {
+        background-color: darken($theme-green, 10%);
+      }
     }
     &:nth-child(5n + 5) {
-      background-color: $theme-blue;
+      background-color: transparentize($theme-blue, 0.3);
+      &.active {
+        background-color: darken($theme-blue, 12%);
+      }
     }
   }
 }

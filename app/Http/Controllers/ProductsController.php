@@ -17,8 +17,21 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::all();
+        $products = Product::query();
+
+        if ($request->input('search')) {
+          $products = $products->where('name', 'like', '%' . $request->input('search') . '%');
+        }
+
+        if ($request->input('categories', null)) {
+          $products = $products->whereIn('category_id', $request->input('categories'));
+        }
+
+        $products = $products->paginate(10);
+
+        // Get category names + ids for filters
         $categories = Category::all()->pluck('name', 'id')->toArray();
+
         return view('products.index', compact('products', 'categories'));
     }
 
@@ -44,10 +57,10 @@ class ProductsController extends Controller
     {
         // Validate form
         $request->validate([
-          'name'         => 'required',
-          'description'  => 'required',
-          'category'     => 'required',
-          'price'        => 'required',
+          'name'           => 'required',
+          'description'    => 'required',
+          'category_id'    => 'required',
+          'price'          => 'required',
           'featured-image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
           'images.*'       => 'image|mimes:jpg,jpeg,png,gif,svg|max:2048'
         ]);
@@ -79,7 +92,7 @@ class ProductsController extends Controller
      */
     public function show(Request $request, Product $product)
     {
-        return $product;
+        return view('products.show', compact('product'));
     }
 
     /**
